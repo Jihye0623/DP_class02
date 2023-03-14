@@ -27,7 +27,7 @@ public class BookShelf implements Iterable<Book> {
 
     // 자신의 iterator를 반환하는 메소드
     @Override
-    public BookShelf iterator(){
+    public BookShelfIterator iterator(){
         return new BookShelfIterator(this);
     }
 }
