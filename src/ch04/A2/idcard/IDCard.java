@@ -6,7 +6,10 @@ public class IDCard extends Product {
     private String owner;
     private int serial;
 
-    IDCard(String owner, int serial) {
+    // IDCard(String owner, int serial) {
+    public IDCard(String owner, int serial){
+        // 부모의 인자 없는 생성자가 자동으로 호출됨
+        // 명시적으로 부모의 인자있는 생성자를 호출하고 싶으면, 꼭 첫 줄에 super()를 호출해야 함
         System.out.println(owner + "의 카드를 " + serial + "번으로 만듭니다.");
         this.owner = owner;
         this.serial = serial;

@@ -4,6 +4,7 @@ public class Singleton {
     private static Singleton singleton = new Singleton();
 
     private Singleton() {
+        // eager initialization
         System.out.println("인스턴스를 생성했습니다.");
     }
 

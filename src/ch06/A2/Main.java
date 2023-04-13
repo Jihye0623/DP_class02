@@ -11,6 +11,9 @@ public class Main {
         MessageBox mbox = new MessageBox('*');
         MessageBox sbox = new MessageBox('/');
 
+        MessageBox copyOfsbox = new MessageBox(sbox);
+        copyOfsbox.use("Ducksing");
+
         // 登録
         manager.register("strong message", upen);
         manager.register("warning box", mbox);

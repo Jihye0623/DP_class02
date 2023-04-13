@@ -1,0 +1,8 @@
+#written by FileProperties
+#Wed Mar 29 12:13:25 KST 2023
+bornYear=2001
+Year=2023
+width=640
+name=Seo Jihye
+StudentId=20210694
+Location=Seoul

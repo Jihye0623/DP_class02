@@ -1,10 +1,12 @@
 package ch02.Q2;
 
 import java.io.IOException;
+import java.util.Properties;
+
 
 public class Main {
     public static void main(String[] args) {
-        FileIO f = new FileProperties();
+        Properties f = new Properties();
         try {
             f.readFromFile("file.txt");
             f.setValue("width", "1024");

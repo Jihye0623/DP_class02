@@ -8,7 +8,7 @@ public class BookShelf implements Iterable<Book> {
     private List<Book> books;
 
     public BookShelf(int initialsize) {
-        this.books = new ArrayList<>(initialsize);
+        this.books = new ArrayList<Book>(initialsize);
     }
 
     public Book getBookAt(int index) {
