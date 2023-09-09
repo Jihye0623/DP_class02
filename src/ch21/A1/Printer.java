@@ -1,4 +1,6 @@
 package ch21.A1;
+
+// 본인
 public class Printer implements Printable {
     private String name; // 이름 
 

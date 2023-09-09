@@ -13,10 +13,10 @@ import java.awt.event.ActionListener;
 public class SafeFrame extends Frame implements ActionListener, Context {
     private TextField textClock = new TextField(60);		// 현재 시간 표시
     private TextArea textScreen = new TextArea(10, 60);	// 경비 센터 출력
-    private Button buttonUse = new Button("금고 사용");	// 금고 사용 버튼
-    private Button buttonAlarm = new Button("비상벨");	// 비상벨 버튼
-    private Button buttonPhone = new Button("일반 통화");	// 일반 통화 버튼
-    private Button buttonExit = new Button("종료");		// 종료 버튼
+    private Button buttonUse = new Button("Use Safe");	// 금고 사용 버튼
+    private Button buttonAlarm = new Button("Alarm");	// 비상벨 버튼
+    private Button buttonPhone = new Button("Phone");	// 일반 통화 버튼
+    private Button buttonExit = new Button("Exit");		// 종료 버튼
 
     private State state = DayState.getInstance();		// 현재 상태 
 
@@ -25,25 +25,32 @@ public class SafeFrame extends Frame implements ActionListener, Context {
         super(title);
         setBackground(Color.lightGray);
         setLayout(new BorderLayout());
+
         // textClock 배치 
         add(textClock, BorderLayout.NORTH);
         textClock.setEditable(false);
+
         // textScreen 배치 
         add(textScreen, BorderLayout.CENTER);
         textScreen.setEditable(false);
+
         // 패널에 버튼 저장
         Panel panel = new Panel();
         panel.add(buttonUse);
         panel.add(buttonAlarm);
         panel.add(buttonPhone);
         panel.add(buttonExit);
+
         // 그 패널을 배치 
         add(panel, BorderLayout.SOUTH);
+
         // 표시 
         pack();
         setVisible(true);
+        
         // 리스너 설정 
         buttonUse.addActionListener(this);
+        // buttonUse.addActionListener((e)=>(state.doUse(this);));  : 람다식
         buttonAlarm.addActionListener(this);
         buttonPhone.addActionListener(this);
         buttonExit.addActionListener(this);
@@ -54,7 +61,7 @@ public class SafeFrame extends Frame implements ActionListener, Context {
     public void actionPerformed(ActionEvent e) {
         System.out.println(e.toString());
         if (e.getSource() == buttonUse) {		// 금고 사용 버튼
-            state.doUse(this);
+            state.doUse(this);  // 현재 상태 객체에게 위임
         } else if (e.getSource() == buttonAlarm) {	// 비상벨 버튼 
             state.doAlarm(this);
         } else if (e.getSource() == buttonPhone) {	// 일반 통화 버튼  

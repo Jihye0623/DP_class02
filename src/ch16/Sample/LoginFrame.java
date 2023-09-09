@@ -11,13 +11,16 @@ import java.awt.event.ActionListener;
 public class LoginFrame extends Frame implements ActionListener, Mediator {
     private ColleagueCheckbox checkGuest;
     private ColleagueCheckbox checkLogin;
+
     private ColleagueTextField textUser;
     private ColleagueTextField textPass;
+    
     private ColleagueButton buttonOk;
     private ColleagueButton buttonCancel;
 
     // Colleague를 생성하고 배치한 후에 표시한다
     public LoginFrame(String title) {
+        // 부모 생성자 호출은 항상 맨 위에
         super(title);
 
         // 배경색을 설정한다
@@ -75,21 +78,23 @@ public class LoginFrame extends Frame implements ActionListener, Mediator {
         // Listener 설정
         checkGuest.addItemListener(checkGuest);
         checkLogin.addItemListener(checkLogin);
+        
         textUser.addTextListener(textUser);
         textPass.addTextListener(textPass);
+        
         buttonOk.addActionListener(this);
         buttonCancel.addActionListener(this);
     }
 
     // Colleage의 상태가 바뀌면 호출된다
     @Override
-    public void colleagueChanged() {
-        if (checkGuest.getState()) {
+    public void colleagueChanged() {    // 이 안에서 colleague들에게 지시를 내린다
+        if (checkGuest.getState()) {    // guest 체크 박스가 선택되었다면... 
             // 게스트 로그인 
             textUser.setColleagueEnabled(false);
             textPass.setColleagueEnabled(false);
             buttonOk.setColleagueEnabled(true);
-        } else {
+        } else {    // login 체크박스가 선택되었다면...
             // 사용자 로그인 
             textUser.setColleagueEnabled(true);
             userpassChanged();
@@ -99,14 +104,14 @@ public class LoginFrame extends Frame implements ActionListener, Mediator {
     // textUser 또는 textPass의 변경이 있다 
     // 각 Colleage의 활성/비활성을 판정한다
     private void userpassChanged() {
-        if (textUser.getText().length() > 0) {
+        if (textUser.getText().length() > 0) {  // 문자열이 입력되어 있으면 ..
             textPass.setColleagueEnabled(true);
             if (textPass.getText().length() > 0) {
                 buttonOk.setColleagueEnabled(true);
-            } else {
+            } else {    // 패스워드 칸에 문자열이 없으면
                 buttonOk.setColleagueEnabled(false);
             }
-        } else {
+        } else {    // 유저 네임 칸에 문자열이 없으면
             textPass.setColleagueEnabled(false);
             buttonOk.setColleagueEnabled(false);
         }

@@ -1,7 +1,7 @@
 package ch07.Sample;
 
 public class TextBuilder extends Builder {
-    private StringBuilder sb = new StringBuilder();
+    private StringBuilder sb = new StringBuilder();     // vs StringBuilder : ppt 10쪽
 
     @Override
     public void makeTitle(String title) {

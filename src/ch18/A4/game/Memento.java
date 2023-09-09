@@ -47,9 +47,9 @@ public class Memento {
         // 쓰기
         try {
             Files.writeString(Path.of(filename), sb,
-                    StandardOpenOption.CREATE,
-                    StandardOpenOption.TRUNCATE_EXISTING,
-                    StandardOpenOption.WRITE);
+                    StandardOpenOption.CREATE,      // 파일이 존재 하지 않으면 새로 생성
+                    StandardOpenOption.TRUNCATE_EXISTING,   // 파일이 이미 존재하면 없애라
+                    StandardOpenOption.WRITE);      // 쓰기 권한으로 파일을 오픈함
         } catch (IOException e) {
             System.out.println(e.toString());
             return false;

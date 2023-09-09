@@ -12,7 +12,7 @@ public class IDCardFactory extends Factory {
 
     protected synchronized Product createProduct(String owner) {
         manager.put(serial, owner);
-        manager.get(serial);
+        // manager.get(serial);
         return new IDCard(owner, serial++);
     }
 

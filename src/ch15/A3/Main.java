@@ -4,6 +4,7 @@ public class Main {
     public static void main(String[] args) {
         String title = "Welcome!";
         String message = "Hello, world!";
+
         String html = """
         <!DOCTYPE html>
         <html>
@@ -15,6 +16,7 @@ public class Main {
             </body>
         </html>
         """.formatted(title, message);
+        
         System.out.print(html);
     }
 }

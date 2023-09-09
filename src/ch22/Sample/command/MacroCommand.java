@@ -5,7 +5,7 @@ import java.util.Deque;
 
 public class MacroCommand implements Command {
     // 명령의 배열 
-    private Deque<Command> commands = new ArrayDeque<>();
+    private Deque<Command> commands = new ArrayDeque<>();   // 컬렉션
 
     // 실행 
     @Override
@@ -17,7 +17,7 @@ public class MacroCommand implements Command {
 
     // 추가 
     public void append(Command cmd) {
-        if (cmd == this) {
+        if (cmd == this) {  // 자기가 추가되는 것을 막음
             throw new IllegalArgumentException("infinite loop caused by append");
         }
         commands.push(cmd);

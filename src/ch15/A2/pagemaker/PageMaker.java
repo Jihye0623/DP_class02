@@ -29,10 +29,12 @@ public class PageMaker {
             HtmlWriter writer = new HtmlWriter(new FileWriter(filename));
             writer.title("Link page");
             Properties mailprop = Database.getProperties("maildata");
+
             for (String mailaddr: mailprop.stringPropertyNames()) {
                 String username = mailprop.getProperty(mailaddr, "(unknown)");
                 writer.mailto(mailaddr, username);
             }
+            
             writer.close();
             System.out.println(filename + " is created.");
         } catch (IOException e) {

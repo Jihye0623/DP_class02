@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+// Originator 
 public class Gamer {
     // 소지금
     private int money;
@@ -30,17 +31,17 @@ public class Gamer {
     // 내기한다 … 게임 진행 
     public void bet() {
         // 주사위를 던진다 
-        int dice = random.nextInt(6) + 1;
+        int dice = random.nextInt(6) + 1;   // 1~6
         if (dice == 1) {
-            // 1의 눈 … 소지금이 증가한다 
+            // 1의 눈 … 소지금이 증가한다 : 좋은 수
             money += 100;
             System.out.println("소지금이 증가했습니다.");
         } else if (dice == 2) {
-            // 2의 눈 … 소지금이 절반이 된다 
+            // 2의 눈 … 소지금이 절반이 된다 : 나쁜 수
             money /= 2;
             System.out.println("소지금이 절반으로 줄었습니다.");
         } else if (dice == 6) {
-            // 6의 눈 … 과일을 받는다 
+            // 6의 눈 … 과일을 받는다 : 특히 좋은 수
             String f = getFruit();
             System.out.println("과일(" + f + ")를 받았습니다.");
             fruits.add(f);
@@ -76,7 +77,7 @@ public class Gamer {
     // 과일을 하나 얻는다
     private String getFruit() {
         String f = fruitsName[random.nextInt(fruitsName.length)];
-        if (random.nextBoolean()) {
+        if (random.nextBoolean()) {     // 랜덤으로 T or F 나옴
             return "맛있는 " + f;
         } else {
             return f;

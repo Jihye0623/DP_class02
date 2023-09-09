@@ -27,7 +27,7 @@ public class DrawCanvas extends Canvas implements Drawable {
         history.execute();
     }
 
-    // 그리기 
+    // 그리기 .............................................................. 
     @Override
     public void draw(int x, int y) {
         Graphics g = getGraphics();

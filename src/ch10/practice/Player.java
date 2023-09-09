@@ -46,4 +46,9 @@ public class Player {
             + losecount + " lose"
             + "]";
     }
+
+    // 전략 교체 메소드
+    public void setStrategy(Strategy s) {
+        this.strategy = s;
+    }
 }

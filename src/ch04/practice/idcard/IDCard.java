@@ -23,7 +23,7 @@ public class IDCard extends Product {
         return "[IDCard:" + owner + "]";
     }
 
-    public String getOwner() {
-        return owner;
-    }
+    // public String getOwner() {
+    //     return owner;
+    // }
 }

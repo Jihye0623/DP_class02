@@ -11,8 +11,8 @@ public class Main {
         UnderlinePen upen = new UnderlinePen('-');
         MessageBox mbox = new MessageBox('*');
         MessageBox sbox = new MessageBox('/');
-
         UnderlinePen pen1 = new UnderlinePen('$');
+        
         pen1.use("Duksung");
 
         // 등록 

@@ -17,11 +17,11 @@ public abstract class Support {
 
     // 트러블 해결 절차를 결정한다
     public void support(Trouble trouble) {
-        if (resolve(trouble)) {
+        if (resolve(trouble)) {     // 해결했으면..
             done(trouble);
-        } else if (next != null) {
+        } else if (next != null) {  // 뒷사람이 있으면..
             next.support(trouble);
-        } else {
+        } else {    // 뒷사람이 없으면
             fail(trouble);
         }
     }
